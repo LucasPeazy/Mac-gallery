@@ -10,6 +10,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgb(233, 231, 231);
+  letter-spacing: -0.03em;;
+    font-family: var(--main-font);
 
   /* Добавляем для анимации появления */
   opacity: 0;
@@ -58,6 +60,7 @@ a:visited {
   z-index: 1;
   background-color: black;
    transition: 0.3s ease-in-out;
+   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
 }
 
 /* При наведении */
@@ -188,7 +191,7 @@ a:visited {
   opacity: 100%;
 }
 .fancybox__content>.f-button.is-close-btn:hover {
-  transform: scale(1.07);
+  transform: scale(0.90);
 }
 .fancybox__slide {
   padding-top: 15px !important;
@@ -203,3 +206,267 @@ a:visited {
   transform: scale(1.02);
   transition: 0.1s ease-in-out;
 }
+
+.add_photo_popup_wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: -15px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* изначально скрыт */
+  opacity: 0;
+  visibility: hidden;
+
+  /* плавный переход */
+  z-index: 10;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.add_photo_popup_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 8;
+}
+
+.add_photo_container {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9;
+  font-family: var(--main-font);
+  color: var(--main-font-color);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 620px;
+  margin: 20px;
+  box-sizing: border-box;
+
+  max-height: 90vh;       /* ограничение по высоте */
+  overflow-y: auto;       /* скролл всего окна */
+}
+
+
+.add_photo_container h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.add_photo_container label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.add_photo_container input[type="file"],
+.add_photo_container select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  color: var(--main-font-color);
+  background-color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.add_photo_container input[type="file"]:focus,
+.add_photo_container select:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.add_photo_container button {
+  background-color: var(--main-font-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.add_photo_container button:hover {
+  background-color: #444;
+}
+
+ .preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+
+ .preview-wrapper {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 5px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+ 
+.preview-wrapper img {
+  width: 100%;
+  height: auto;                     /* сохраняем пропорции */
+  max-height: 550px;
+  object-fit: cover;              /* не обрезаем изображение */
+  user-select: none;
+  pointer-events: none;
+  display: block;
+  border-radius: 5px 5px 0 0;
+}
+
+
+  .remove-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    height: 22px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px !important;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    background: none !important;
+    padding: 0px !important;
+    width: 22px !important;
+    border: none;
+    mix-blend-mode: difference;
+    z-index: 10;
+  }
+
+  .remove-btn:hover {
+      color: rgb(229, 3, 3);
+      mix-blend-mode: normal !important;
+  }
+
+  .tags-wrapper {
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
+  }
+
+  .tags-wrapper label {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: transparent;
+  font-size: 14px !important;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #ccc;
+  margin-bottom: 0px !important;
+}
+
+.tags-wrapper input[type="checkbox"] {
+  display: none; /* прячем обычный чекбокс */
+}
+
+.tags-wrapper label:has(input[type="checkbox"]:checked) {
+  background-color: #0d00ff;
+  color: white;
+  border-color: #0d00ff;
+}
+
+
+/* Текст внутри (по span.tag) */
+.tags-wrapper .tag {
+  display: inline-block;
+}
+
+
+  .btn-submit {
+    background-color: #1e1d1d !important;
+    color: #fff;
+    font-weight: 400 !important;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+        background-color: #000000 !important;
+  }
+
+  .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+    border: 1px solid transparent;
+  height: 300px;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  user-select: none;
+  text-align: center;
+  align-content: center;
+  font-family: var(--main-font);
+  background-color: #0d00ff;
+}
+
+.custom-file-label:hover {
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+ 

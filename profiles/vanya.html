@@ -12,9 +12,10 @@
 
   <!-- Fancybox CSS -->
   <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css"
-  />
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css"
+/>
+
 
   <!-- Твои стили -->
   <link rel="stylesheet" href="/fade-transition.css" />
@@ -22,6 +23,32 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="add_photo_popup_wrapper">
+      <div class="add_photo_popup_overlay"> </div>
+      <div class="add_photo_container">
+ <form id="photo-upload-form" enctype="multipart/form-data">
+    <div id="preview-container" class="preview-container"></div>
+  <label for="photos" class="custom-file-label">
+   Загрузить фото (можно несколько)
+</label>
+<input
+  type="file"
+  id="photos"
+  name="photos"
+  accept="image/*"
+  multiple
+  required
+  class="visually-hidden"
+/>
+
+
+
+  <button type="submit" class="btn-submit">Добавить</button>
+</form>
+</div>
+
+    </div>
+   
     <div class="add_button_sticky">
       <img src="/+.svg" alt="Add button" />
     </div>
@@ -75,6 +102,18 @@
       </a>
       <a href="/photos/IMG_3604.png" data-fancybox="gallery" class="large">
         <img src="/photos/IMG_3604.png" alt="Photo 13" />
+      </a>
+         <a href="/photos/IMG_3494.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3494.png" alt="Photo 14" />
+      </a>
+        <a href="/photos/IMG_3604.png" data-fancybox="gallery" class="large">
+        <img src="/photos/IMG_3604.png" alt="Photo 15" />
+      </a>
+       <a href="/photos/IMG_3494.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3494.png" alt="Photo 16" />
+      </a>
+       <a href="/photos/IMG_3494.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3494.png" alt="Photo 17" />
       </a>
     </div>
   </div>
