@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vanya - Fancybox Gallery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Fancybox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css"
+  />
+
+  <!-- Твои стили -->
+  <link rel="stylesheet" href="/fade-transition.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="add_button_sticky">
+      <img src="/+.svg" alt="Add button" />
+    </div>
+
+    <div class="first_div">
+      <ul>
+        <li data-text="Ваня"><a href="/main.html">Ваня</a></li>
+      </ul>
+    </div>
+
+    <div class="photo-album" id="gallery">
+      <a href="/photos/IMG_3494.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3494.png" alt="Photo 1" />
+      </a>
+      <a href="/photos/IMG_3504.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3504.png" alt="Photo 2" />
+      </a>
+      <a href="/photos/IMG_3511.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3511.png" alt="Photo 3" />
+      </a>
+      <a href="/photos/IMG_3594.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3594.png" alt="Photo 4" />
+      </a>
+
+      <a href="/photos/IMG_3604.png" data-fancybox="gallery" class="large">
+        <img src="/photos/IMG_3604.png" alt="Photo 5" />
+      </a>
+      <a href="/photos/IMG_3614.png" data-fancybox="gallery" class="large">
+        <img src="/photos/IMG_3614.png" alt="Photo 6" />
+      </a>
+
+      <a href="/photos/IMG_3645.png" data-fancybox="gallery" class="center-large">
+        <img src="/photos/IMG_3645.png" alt="Photo 7" />
+      </a>
+
+      <a href="/photos/IMG_3707.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3707.png" alt="Photo 8" />
+      </a>
+      <a href="/photos/IMG_3707.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3707.png" alt="Photo 9" />
+      </a>
+      <a href="/photos/IMG_3511.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3511.png" alt="Photo 10" />
+      </a>
+      <a href="/photos/IMG_3494.png" data-fancybox="gallery">
+        <img src="/photos/IMG_3494.png" alt="Photo 11" />
+      </a>
+
+      <a href="/photos/IMG_3504.png" data-fancybox="gallery" class="large">
+        <img src="/photos/IMG_3504.png" alt="Photo 12" />
+      </a>
+      <a href="/photos/IMG_3604.png" data-fancybox="gallery" class="large">
+        <img src="/photos/IMG_3604.png" alt="Photo 13" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Fancybox JS UMD -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+
+  <!-- Твой внешний инициализирующий скрипт -->
+  <script src="/scripts/fancybox-init.js"></script>
+
+  <!-- Fade transitions -->
+  <script src="/scripts/fade-transition.js"></script>
+</body>
+</html>
